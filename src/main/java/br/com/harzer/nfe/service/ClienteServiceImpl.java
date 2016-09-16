@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import br.com.harzer.nfe.dao.ClienteDaoImpl;
+import br.com.harzer.nfe.dao.IClienteDao;
 import br.com.harzer.nfe.model.Cliente;
 
 @Service("clienteService")
@@ -14,7 +15,7 @@ import br.com.harzer.nfe.model.Cliente;
 public class ClienteServiceImpl implements IClienteService {
 
 	@Autowired
-	private ClienteDaoImpl dao;
+	private IClienteDao dao;
 
 	@Override
 	public Cliente findById(int id) {
