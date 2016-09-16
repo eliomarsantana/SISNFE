@@ -23,7 +23,7 @@ public class ClienteController {
 	MessageSource messageSource;
 
 	@RequestMapping(value = { "/cliente", "/list" }, method = RequestMethod.GET)
-	public String listEmitentes(ModelMap model) {
+	public String listClientes(ModelMap model) {
 
 		List<Cliente> clientes = service.findAllClientes();
 		model.addAttribute("clientes", clientes);
