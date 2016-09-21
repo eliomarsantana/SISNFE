@@ -26,5 +26,6 @@
 	</table>
 	<br/>
 	<a href="<c:url value='/new' />">Adicionar novo Emitente</a>
+	<a href="<c:url value='/cliente/list' />">Adicionar novo Cliente</a>
 </body>
 </html>
