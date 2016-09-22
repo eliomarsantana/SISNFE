@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.harzer.nfe.model.Cliente;
 import br.com.harzer.nfe.service.IClienteService;
@@ -22,12 +23,12 @@ public class ClienteController {
 	@Autowired
 	MessageSource messageSource;
 
-	@RequestMapping(value = { "/cliente", "/list" }, method = RequestMethod.GET)
-	public String listClientes(ModelMap model) {
-
+	@RequestMapping(value = { "/list" }, method = RequestMethod.GET)
+	public ModelAndView listClientes(ModelAndView model) {
+		model = new ModelAndView("cliente/allclientes");
 		List<Cliente> clientes = service.findAllClientes();
-		model.addAttribute("clientes", clientes);
-		return "allclientes";
+		model.addObject(clientes);
+		return model;
 	}
 
 }

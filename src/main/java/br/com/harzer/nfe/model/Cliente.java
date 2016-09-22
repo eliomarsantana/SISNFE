@@ -1,5 +1,6 @@
 package br.com.harzer.nfe.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -17,28 +18,36 @@ public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_cliente")
 	public int idCliente;
 
 	@NotNull
 	@Size(min = 3, max = 100)
+	@Column(name = "nome_razao_social")
 	public String nomeRazaoSocial;
 
 	@NotNull
 	@Enumerated(EnumType.STRING)
+	@Column(name = "tipo_documento")
 	private TipoDocumento TipoDocumento;
 
 	@NotNull
 	@Size(min = 14, max = 17)
+	@Column(name = "cnpj")
 	public String cnpj;
 
 	@NotNull
 	@Size(min = 14, max = 17)
+	@Column(name = "cpf")
 	public String cpf;
 
+	@Column(name = "inscricao_estadual")
 	public int inscricaoEstadual;
 
+	@Column(name = "isento_icms")
 	public boolean isentoIcms;
 
+	@Column(name = "inscricao_suframa")
 	public int inscricaoSuframa;
 
 	public int getIdCliente() {
