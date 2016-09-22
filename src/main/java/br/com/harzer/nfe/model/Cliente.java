@@ -29,7 +29,7 @@ public class Cliente {
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	@Column(name = "tipo_documento")
-	private TipoDocumento TipoDocumento;
+	private TipoDocumento tipoDocumento;
 
 	@NotNull
 	@Size(min = 14, max = 17)
@@ -67,11 +67,11 @@ public class Cliente {
 	}
 
 	public TipoDocumento getTipoDocumento() {
-		return TipoDocumento;
+		return this.tipoDocumento;
 	}
 
 	public void setTipoDocumento(TipoDocumento tipoDocumento) {
-		TipoDocumento = tipoDocumento;
+		this.tipoDocumento = tipoDocumento;
 	}
 
 	public String getCnpj() {
