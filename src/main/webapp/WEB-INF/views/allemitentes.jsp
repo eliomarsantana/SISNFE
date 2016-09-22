@@ -17,7 +17,7 @@
 		<c:forEach items="${emitentes}" var="emitente">
 			<tr>
 			<td>${emitente.nomeRazaoSocial}</td>
-			<td>${emitenteemitente.nomeFantasia}</td>
+			<td>${emitente.nomeFantasia}</td>
 			<td>${emitente.inscricaoEstadual}</td>
 			<td><a href="<c:url value='/edit-${emitente.cnpj}-emitente' />">${emitente.cnpj}</a></td>
 			<td><a href="<c:url value='/delete-${emitente.cnpj}-emitente' />">delete</a></td>
